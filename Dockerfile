@@ -8,7 +8,7 @@ COPY "docker-entrypoint.sh" "/"
 RUN mkdir -p /usr/local/src && \
     cd /usr/local/src && \
     apk update && \
-    apk add subversion && \
+    apk add subversion make g++ && \
     svn checkout http://www.streamboard.tv/svn/oscam/trunk oscam -r $OSCAM_REVISION && \
     cd oscam && \
     make
